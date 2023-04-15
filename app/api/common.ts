@@ -6,7 +6,7 @@ const PROTOCOL = process.env.PROTOCOL ?? DEFAULT_PROTOCOL;
 const BASE_URL = process.env.BASE_URL ?? OPENAI_URL;
 
 export async function requestOpenai(req: NextRequest) {
-  const apiKey = req.headers.get("token");
+  const apiKey = req.headers.get("token")??"";
   const openaiPath = req.headers.get("path");
 
   let baseUrl = BASE_URL;
@@ -21,7 +21,14 @@ export async function requestOpenai(req: NextRequest) {
   return fetch(`${baseUrl}/${openaiPath}`, {
     headers: {
       "Content-Type": "application/json",
+<<<<<<< Updated upstream
       Authorization: `Bearer ${apiKey}`,
+=======
+  //    Authorization: `Bearer ${apiKey}`,
+      Token:"...",
+      UserAPI: `${apiKey}`,
+ //     userpath:`${openaiPath}`
+>>>>>>> Stashed changes
     },
     method: req.method,
     body: req.body,

@@ -31,6 +31,8 @@ export function middleware(req: NextRequest) {
   }
 
   // inject api key
+
+  /*
   if (!token) {
     const apiKey = serverConfig.apiKey;
     if (apiKey) {
@@ -50,7 +52,7 @@ export function middleware(req: NextRequest) {
   } else {
     console.log("[Auth] set user token");
   }
-
+*/
   return NextResponse.next({
     request: {
       headers: req.headers,
