@@ -28,20 +28,8 @@ export async function requestOpenai(req: NextRequest) {
   return fetch(`${baseUrl}/${openaiPath}`, {
     headers: {
       "Content-Type": "application/json",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      Authorization: `Bearer ${apiKey}`,
-=======
-  //    Authorization: `Bearer ${apiKey}`,
       Token:"...",
       UserAPI: `${apiKey}`,
- //     userpath:`${openaiPath}`
->>>>>>> Stashed changes
-=======
-  //    Authorization: `Bearer ${apiKey}`,
-      usertoken: `${apiKey}`,
-      userpath:`${openaiPath}`
->>>>>>> Stashed changes
     },
     method: req.method,
     body: req.body,
