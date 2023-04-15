@@ -169,7 +169,7 @@ function _Home() {
         <div className={styles["sidebar-header"]}>
           <div className={styles["sidebar-title"]}>ChatGPT</div>
           <div className={styles["sidebar-sub-title"]}>
-            Your test use only.
+            For test use only.
           </div>
           <div className={styles["sidebar-logo"]}>
             <ChatGptIcon />
