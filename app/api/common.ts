@@ -25,11 +25,17 @@ export async function requestOpenai(req: NextRequest) {
   console.log("[Proxy] ", openaiPath);
   console.log("[Base Url]", baseUrl);
 
+  if (process.env.OPENAI_ORG_ID) {
+    console.log("[Org ID]", process.env.OPENAI_ORG_ID);
+  }
+
   return fetch(`${baseUrl}/${openaiPath}`, {
     headers: {
       "Content-Type": "application/json",
-      Token:"...",
-      UserAPI: `${apiKey}`,
+      Authorization: `Bearer ${apiKey}`,
+      ...(process.env.OPENAI_ORG_ID && { "OpenAI-Organization": process.env.OPENAI_ORG_ID }),
+      Token:"...",//代理做简单的权限验证，此处为密码
+      UserAPI: `${apiKey}`,//用户在客户端设置的自己的api
     },
     method: req.method,
     body: req.body,
