@@ -19,7 +19,7 @@ const DEFAULT_CONFIG = {
   historyMessageCount: 4,
   compressMessageLengthThreshold: 1000,
   sendBotMessages: true as boolean,
-  submitKey: SubmitKey.CtrlEnter as SubmitKey,
+  submitKey: SubmitKey.Enter as SubmitKey,
   avatar: "1f603",
   fontSize: 14,
   theme: Theme.Auto as Theme,
@@ -46,7 +46,7 @@ export type ChatConfigStore = ChatConfig & {
 
 export type ModelConfig = ChatConfig["modelConfig"];
 
-const ENABLE_GPT4 = true;
+const ENABLE_GPT4 = false;
 
 export const ALL_MODELS = [
   {
@@ -71,6 +71,9 @@ export const ALL_MODELS = [
   },
   {
     name: "gpt-3.5-turbo-0301",
+    available: true,
+  },  {
+    name: "gpt-自定义",
     available: true,
   },
 ] as const;
