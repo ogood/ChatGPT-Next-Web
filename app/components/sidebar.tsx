@@ -10,6 +10,7 @@ import logoImg from "../icons/ds_name.jpg";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import Locale from "../locales";
+import BotIcon from "../icons/ds_logo.jpg";
 
 import { useAppConfig, useChatStore } from "../store";
 
@@ -91,12 +92,14 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>大是</div>
-        <div className={styles["sidebar-sub-title"]}>
-        Tell me about it！
-        </div>
+
+
         <div className={styles["sidebar-logo"]}>
           <img  src={logoImg.src} className={styles["sidebar-logo-img"]} />
+        </div>
+       
+        <div className={styles["sidebar-sub-title"]}>
+       <img className={styles["sidebar-sub-title-img"]} src={BotIcon.src} />  : Tell me about it！
         </div>
       </div>
 
