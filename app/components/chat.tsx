@@ -9,7 +9,7 @@ import ReturnIcon from "../icons/return.svg";
 import CopyIcon from "../icons/copy.svg";
 import DownloadIcon from "../icons/download.svg";
 import LoadingIcon from "../icons/three-dots.svg";
-import BotIcon from "../icons/bot.svg";
+import BotIcon from "../icons/ds_logo.jpg";
 import BlackBotIcon from "../icons/black-bot.svg";
 import AddIcon from "../icons/add.svg";
 import DeleteIcon from "../icons/delete.svg";
@@ -78,7 +78,7 @@ export function Avatar(props: { role: Message["role"]; model?: ModelType }) {
         {props.model?.startsWith("gpt-4") ? (
           <BlackBotIcon className={styles["user-avtar"]} />
         ) : (
-          <BotIcon className={styles["user-avtar"]} />
+          <img src={BotIcon.src} className={styles["user-avtar"]} />
         )}
       </div>
     );

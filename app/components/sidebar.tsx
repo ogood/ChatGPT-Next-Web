@@ -6,6 +6,7 @@ import { IconButton } from "./button";
 import SettingsIcon from "../icons/settings.svg";
 import GithubIcon from "../icons/github.svg";
 import ChatGptIcon from "../icons/chatgpt.svg";
+import logoImg from "../icons/ds_name.jpg";
 import AddIcon from "../icons/add.svg";
 import CloseIcon from "../icons/close.svg";
 import Locale from "../locales";
@@ -90,12 +91,12 @@ export function SideBar(props: { className?: string }) {
       }`}
     >
       <div className={styles["sidebar-header"]}>
-        <div className={styles["sidebar-title"]}>ChatGPT Next</div>
+        <div className={styles["sidebar-title"]}>大是</div>
         <div className={styles["sidebar-sub-title"]}>
-          Build your own AI assistant.
+        Tell me about it！
         </div>
         <div className={styles["sidebar-logo"]}>
-          <ChatGptIcon />
+          <img  src={logoImg.src} className={styles["sidebar-logo-img"]} />
         </div>
       </div>
 
@@ -123,11 +124,7 @@ export function SideBar(props: { className?: string }) {
               <IconButton icon={<SettingsIcon />} shadow />
             </Link>
           </div>
-          <div className={styles["sidebar-action"]}>
-            <a href={REPO_URL} target="_blank">
-              <IconButton icon={<GithubIcon />} shadow />
-            </a>
-          </div>
+
         </div>
         <div>
           <IconButton
